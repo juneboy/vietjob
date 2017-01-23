@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans+Condensed:100,300,700|Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Courgette&subset=latin-ext');
+
+body {
+	font-family: 'Open Sans Condensed','Josefin Sans','Raleway', sans-serif;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans Condensed','Raleway', sans-serif;
+	font-weight: 700;
+}
+
+/** navbar default **/
+header {
+	background: #66ffff;
+}
+header .navbar {
+	padding: 30px 0;
+}
+
+header .navbar-default {
+	background-color: transparent;
+	border: none;
+}
+
+/** Navbar brand **/
+header .navbar-header .navbar-brand {
+	background: transparent;
+	background-color: #800000;
+	margin-left: 40px;
+	color: white;
+	border: 2px solid #00ffff;
+	font-weight: 700;
+	}
+header .navbar-header .navbar-brand:hover {
+	background-color: #800000;
+	color: white;
+	border: none;
+	-webkit-animation: from{left: 0px;} to{right: 20px;} infinite;
+	}
+	
+
+/** Navbar menu link **/	
+header .navbar-default .navbar-nav a {
+	color: #ffffff;
+	font-weight: 700;
+}
+
+header #menu .active {
+	background: black !important;
+}
+
+
+header .navbar-default .navbar-nav .active a {
+	background-color: #ffff00;
+	color: #000080;
+}
+
+header .navbar-default .navbar-nav .active a:hover {
+	background-color: #ffff00;
+}
+
+/** carousel image **/
+.carousel-inner .item img {
+	width: 100%;
+}
+
+/** dropdown menu language **/
+.dropdown-menu {
+	background-color: transparent;
+	min-width: 3px;
+}
+
+.dropdown-menu li a img {
+	white: 100%;
+}
+
+/** collapse **/
+header .navbar-default .navbar-toggle {
+	margin-right: 40px;
+	border: none;
+}
+header .navbar-default .navbar-toggle .icon-bar {
+	background-color: #808000;
+}
+
+@media only screen and (max-width: 768px) {
+	header .navbar-collapse.in {
+	   background-color: rgba(0,0,0, .5);
+	   display: block;
+	   border: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+   .carousel-control {
+       margin-top: 50px;
+       margin-left: 50px;
+       margin-right: 50px;
+   }
+}
+
+
+
+/******** job search form **/
+header #jobsearch {
+	background: #408000;
+	height: 150px;
+}
+
+header #jobsearch input {
+	margin-top: 60px;
+}
+
+header #jobsearch .badge {
+	margin-right: 50px;
+	margin-top: 60px;
+	padding: 10px;
+	background: #808000;
+}
+
+header #jobsearch .badge:hover {
+	border: 2px solid #ffffff; 
+	font-size: 2.5em;
+	margin-top: 40px;
+}
+
+header #jobsearch input {
+	background: #808000;
+/* 	border: 1px solid #0088ff; */
+}
+header #jobsearch input:hover {
+	border: 2px solid #ffffff; 
+}
+
+header #jobsearch input[type="submit"] {
+	background: transparent;
+	color: white;
+}
+
+header #jobsearch input::-webkit-input-placeholder, input {
+color: white !important;
+}
+
+ @media only screen and (max-width: 768px) {
+	header #jobsearch {
+	background: #408000;
+	overflow: auto;
+	padding-bottom: 20px;
+  }
+ }
+/** How to apply page **/
+#howtoapply .howtoapply {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: 40px;
+}
+
+#howtoapply .howtoapply .resume, #howtoapply .howtoapply .member, #howtoapply .howtoapply .checked-2 , #howtoapply .howtoapply .search-2 {
+	display: inline;
+	margin-right: 20px;
+}
+
+/* @-webkit-keyframes example {
+	from {display: none;}
+	to {background-color: yellow ;}
+}
+
+#resume, #checked-2, #member, #search-2 {
+	-webkit-animation-name: example;
+	-webkit-animation-delay: 1s;
+	-webkit-animation-duration: 1s;
+} */
+
+#howtoapply img {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+#howtoapply img:hover {
+  -webkit-transform: rotate(-20deg);
+     -moz-transform: rotate(-20deg);
+       -o-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+/**** service page **/
+#service {
+	background-color: rgb(27, 188, 155);
+	color: white;
+}
+
+#service p {
+	font-family: 'Josefin Sans','Raleway', sans-serif;
+	font-weight: 100;
+	font-size: 1.5em;
+	color: black;
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+#service .trainning, #service .scales, #service .tax, #service .success {
+	margin-top: 80px;
+	display: inline;
+	padding-right: 15px;
+}
+
+/** our staff page **/
+#staff {
+	margin-top: 50px;
+	padding: 5px 10px;
+}
+#staff .staff {
+	padding: 10px 20px;
+}
+#staff .staff:hover {
+	background-color: rgb(27, 155, 188);
+}
+#staff .slogan {
+	height: 80px;
+	background-color: rgb(27, 188, 130);
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-family: 'Courgette', cursive;
+	color: white;
+	font-style: italic;
+}
+
+/* #staff img {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+#staff img:hover {
+  border-radius: 10%;
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+} */
+
+/** contact page **/
+#contact {
+	margin-bottom: 10px;
+}
+
+#contact input {
+	color: #808080 !important;
+	font-weight: 700;
+}
+
+#contact input::-webkit-input-placeholder {
+	color: #808080 !important;
+	font-weight: 700 !important;
+}
+#map {
+	height: 250px; 
+	margin-top: 25px;
+	margin-left: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+	#contact .contact {
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+   #map {
+    margin-left: 20px; 
+	margin-right: 20px;
+   }
+   
+   #contact .direction {
+      margin-top: 20px;
+   }
+   
+    #contact .direction button {
+      whidth: 20px;
+   }
+}
+/**login page**/
+#login {
+	background-color: transparent;
+	color: white !important;
+	font-weight: 700 !important;
+}
+#login .modal-content {
+	background: #408000;
+}
+#login input:hover {
+	border: 2px solid #008040;
+	background: #008040;
+}
+#login input-placeholder, #login label{
+	color: white !important;
+	font-weight: 700 !important;
+}
+#login input[type="submit"] {
+	background-color: transparent;
+}
+#login input[type="submit"]:hover {
+	border: 2px solid white;
+}
+ 
+
+/** footer **/
+footer .glyphicon {
+		font-size: 40px;
+	}
+@media only screen and (max-width: 768px) {
+	footer .glyphicon {
+		font-size: 40px;
+		position: relative;
+		top: 20px;
+	}
+}
+
+footer h5 {
+	padding-top: 10px;
+}

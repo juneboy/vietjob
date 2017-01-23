@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans+Condensed:100,300,700|Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Courgette&subset=latin-ext');
+
+body {
+	font-family: 'Open Sans Condensed','Josefin Sans','Raleway', sans-serif;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans Condensed','Raleway', sans-serif;
+	font-weight: 700;
+}
+.main .search form {
+	margin-bottom: 100px;
+	margin-top: 50px;
+}
+
+.main .search form input {
+	margin-left: 0px;
+	border: none;
+}

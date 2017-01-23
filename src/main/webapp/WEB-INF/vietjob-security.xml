@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<import resource="vietjob-data.xml" />
+	<sec:http auto-config="true" use-expressions="true">
+		<sec:intercept-url pattern="/secure/main/admin/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<sec:intercept-url pattern="/secure/main/employee/**"
+			access="hasRole('ROLE_EMPLOYEE')" />
+		<sec:intercept-url pattern="/secure/main/employer/**"
+			access="hasRole('ROLE_EMPLOYER')" />
+		<sec:intercept-url pattern="/secure/main" access="isAuthenticated()" />
+		<sec:intercept-url pattern="/*" access="permitAll" />
+
+		<sec:form-login login-page="/login" default-target-url="/secure/main"
+			authentication-failure-url="/loginfail" username-parameter="user"
+			password-parameter="pass" />
+		<sec:logout logout-success-url="/logout" />
+		<sec:csrf disabled="true" />
+		<sec:remember-me key="vietjobKey"
+			token-validity-seconds="2419200" />
+	</sec:http>
+
+	<bean id="encoder"
+		class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
+	<sec:authentication-manager>
+		<sec:authentication-provider>
+			<sec:password-encoder ref="encoder" />
+			<sec:jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select email, pass, enabled from User where email=? and enabled = 1"
+				authorities-by-username-query="select u.email, r.role from User as u, Role as r, Authority as a where u.userID = a.userID_FK and r.roleID = a.roleID_FK and u.email=?  " />
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+	<sec:global-method-security
+		pre-post-annotations="enabled" />
+</beans>
