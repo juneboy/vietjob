@@ -49,10 +49,10 @@ public class EmployerDaoImpl implements EmployerDao {
 		String name = e.getEmployerName();
 		String present = e.getEmployerPresent();
 		String add = e.getEmployerAddress();
-		String zipcode = e.getZipcode().getZipcode();
+		String zipcode = e.getZipcode();
 		String phone = e.getEmployerPhone();
-		int userID = e.getUser().getUserID();
-		int industryID = e.getIndustry().getIndustryID();
+		int userID = e.getUserID();
+		int industryID = e.getIndustryID();
 		Object[] ob = new Object[]{id, name, present, add, zipcode, phone, userID, industryID};
 		row = jdbcTemplate.update(sql, ob);
 		return row;
@@ -67,10 +67,10 @@ public class EmployerDaoImpl implements EmployerDao {
 			String name = e.getEmployerName();
 			String present = e.getEmployerPresent();
 			String add = e.getEmployerAddress();
-			String zipcode = e.getZipcode().getZipcode();
+			String zipcode = e.getZipcode();
 			String phone = e.getEmployerPhone();
-			int userID = e.getUser().getUserID();
-			int industryID = e.getIndustry().getIndustryID();
+			int userID = e.getUserID();
+			int industryID = e.getIndustryID();
 			Object[] ob = new Object[] { id, name, present, add, zipcode, phone,
 					userID, industryID };
 			jdbcTemplate.update(sql, ob);
@@ -84,10 +84,10 @@ public class EmployerDaoImpl implements EmployerDao {
 		String name = e.getEmployerName();
 		String present = e.getEmployerPresent();
 		String add = e.getEmployerAddress();
-		String zipcode = e.getZipcode().getZipcode();
+		String zipcode = e.getZipcode();
 		String phone = e.getEmployerPhone();
-		int userID = e.getUser().getUserID();
-		int industryID = e.getIndustry().getIndustryID();
+		int userID = e.getUserID();
+		int industryID = e.getIndustryID();
 		int id = e.getEmployerID();
 		Object[] ob = new Object[]{name, present, add, zipcode, phone, userID, industryID, id};
 		row = jdbcTemplate.update(sql, ob);

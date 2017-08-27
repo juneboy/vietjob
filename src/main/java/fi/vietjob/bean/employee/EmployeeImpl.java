@@ -1,70 +1,59 @@
 package fi.vietjob.bean.employee;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import fi.vietjob.bean.industry.Industry;
-import fi.vietjob.bean.nationality.Nationality;
-import fi.vietjob.bean.user.User;
-import fi.vietjob.bean.zipcode.Zipcode;
 
 public class EmployeeImpl implements Employee{
     private int employeeID;
     private String employeeName;
     private Date employeeBOD;
     private String employeeAddress;
-    private Zipcode zipcode;
+    private String zipcode;
     private String employeePhone;
-    private Nationality nationality;
-    private Industry industry;
+    private int nationalityID;
+    private int industryID;
     private String languages;
     private String certificate;
     private int experience;
     private String employeeSSN;
-    private User user;
+    private int userID;
     private String moredetails;
-    
-    
-    
-    /**
+	/**
 	 * @param employeeID
 	 * @param employeeName
 	 * @param employeeBOD
 	 * @param employeeAddress
 	 * @param zipcode
 	 * @param employeePhone
-	 * @param nationality
-	 * @param industry
+	 * @param nationalityID
+	 * @param industryID
 	 * @param languages
 	 * @param certificate
 	 * @param experience
 	 * @param employeeSSN
-	 * @param user
+	 * @param userID
 	 * @param moredetails
-	 * @param fm
 	 */
-	public EmployeeImpl(String employeeName, Date employeeBOD,
-			String employeeAddress, Zipcode zipcode, String employeePhone,
-			Nationality nationality, Industry industry, String languages,
-			String certificate, int experience, String employeeSSN, User user,
-			String moredetails, SimpleDateFormat fm) {
+	public EmployeeImpl(int employeeID, String employeeName, Date employeeBOD,
+			String employeeAddress, String zipcode, String employeePhone,
+			int nationalityID, int industryID, String languages,
+			String certificate, int experience, String employeeSSN, int userID,
+			String moredetails) {
 		super();
+		this.employeeID = employeeID;
 		this.employeeName = employeeName;
 		this.employeeBOD = employeeBOD;
 		this.employeeAddress = employeeAddress;
 		this.zipcode = zipcode;
 		this.employeePhone = employeePhone;
-		this.nationality = nationality;
-		this.industry = industry;
+		this.nationalityID = nationalityID;
+		this.industryID = industryID;
 		this.languages = languages;
 		this.certificate = certificate;
 		this.experience = experience;
 		this.employeeSSN = employeeSSN;
-		this.user = user;
+		this.userID = userID;
 		this.moredetails = moredetails;
-		this.fm = fm;
 	}
-	SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
 	public int getEmployeeID() {
 		return employeeID;
 	}
@@ -74,44 +63,44 @@ public class EmployeeImpl implements Employee{
 	public String getEmployeeName() {
 		return employeeName;
 	}
-	public void setEmployeeName(String name) {
-		this.employeeName = name;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
-	public String getEmployeeBOD() {
-		return fm.format(employeeBOD);
+	public Date getEmployeeBOD() {
+		return employeeBOD;
 	}
-	public void setEmployeeBOD(Date bod) {
-		this.employeeBOD = bod;
+	public void setEmployeeBOD(Date employeeBOD) {
+		this.employeeBOD = employeeBOD;
 	}
 	public String getEmployeeAddress() {
 		return employeeAddress;
 	}
-	public void setEmployeeAddress(String address) {
-		this.employeeAddress = address;
+	public void setEmployeeAddress(String employeeAddress) {
+		this.employeeAddress = employeeAddress;
 	}
-	public Zipcode getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
-	public void setZipcode(Zipcode zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 	public String getEmployeePhone() {
 		return employeePhone;
 	}
-	public void setEmployeePhone(String phone) {
-		this.employeePhone = phone;
+	public void setEmployeePhone(String employeePhone) {
+		this.employeePhone = employeePhone;
 	}
-	public Nationality getNationality() {
-		return nationality;
+	public int getNationalityID() {
+		return nationalityID;
 	}
-	public void setNationality(Nationality nationality) {
-		this.nationality = nationality;
+	public void setNationalityID(int nationalityID) {
+		this.nationalityID = nationalityID;
 	}
-	public Industry getIndustry() {
-		return industry;
+	public int getIndustryID() {
+		return industryID;
 	}
-	public void setIndustry(Industry industry) {
-		this.industry = industry;
+	public void setIndustryID(int industryID) {
+		this.industryID = industryID;
 	}
 	public String getLanguages() {
 		return languages;
@@ -134,14 +123,14 @@ public class EmployeeImpl implements Employee{
 	public String getEmployeeSSN() {
 		return employeeSSN;
 	}
-	public void setEmployeeSSN(String ssn) {
-		this.employeeSSN = ssn;
+	public void setEmployeeSSN(String employeeSSN) {
+		this.employeeSSN = employeeSSN;
 	}
-	public User getUser() {
-		return user;
+	public int getUserID() {
+		return userID;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 	public String getMoredetails() {
 		return moredetails;
@@ -149,7 +138,5 @@ public class EmployeeImpl implements Employee{
 	public void setMoredetails(String moredetails) {
 		this.moredetails = moredetails;
 	}
-    
-    
     
 }

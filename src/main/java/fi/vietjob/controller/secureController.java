@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class secureController {
 	@RequestMapping(value="/main", method=RequestMethod.GET)
     public String directControlpage(Model model){
-    	    return "main";
+    	    return "controlpanel";
     }
 }

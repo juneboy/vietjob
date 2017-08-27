@@ -20,7 +20,7 @@ public class test {
          JobDao dao = (JobDao) context.getBean("jobDao");
                  List<Job> list = dao.getAllJob();
                  Zipcode zip = new ZipcodeImpl(null, null, null);
-                 Employer em = new EmployerImpl(null, null, null, null, null, null, null);
+                 Employer em = new EmployerImpl(0, null, null, null, null, null, 0, 0);
                  em.setEmployerID(2);
                  zip.setZipcode("01720");
                  String details ="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"+
@@ -35,8 +35,8 @@ public class test {
                 		 "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"+
                 		 "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"+
                 		 "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-                 Job job = new JobImpl(3,"Hylytt�j�", zip, details, require, em, new Date(), new Date());
-                 //dao.postJob(job);
+                 Job job = new JobImpl(4,"Päälikkö", zip.getZipcode(), details, require, em.getEmployerID(), new Date(), new Date());
+                 dao.postJob(job);
          for(Job item : list){
         	     System.out.println(item.getJobName());
          }

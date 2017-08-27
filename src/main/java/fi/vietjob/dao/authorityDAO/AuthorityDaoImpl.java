@@ -32,21 +32,21 @@ public class AuthorityDaoImpl implements AuthorityDao {
 		return list;
 	}
 
-	public int insertAuthority(Authority authority) {
+	public int insertAuthority(Authority a) {
 		int row=0;
 		String sql = "insert into Authority(roleID_FK, userID_FK) values (?,?)";
-		int roleID = authority.getRole().getRoleID();
-		int userID = authority.getUser().getUserID();
+		int roleID = a.getRoleID();
+		int userID = a.getUserID();
 		Object[] ob = new Object[]{roleID, userID};
 		row = jdbcTemplate.update(sql, ob);
 		return row;
 	}
 
-	public int editAuthority(Authority authority) {
+	public int editAuthority(Authority a) {
 		int row=0;
 		String sql = "update Authority set roleID_FK=?, userID_FK=?";
-		int roleID = authority.getRole().getRoleID();
-		int userID = authority.getUser().getUserID();
+		int roleID = a.getRoleID();
+		int userID = a.getUserID();
 		Object[] ob = new Object[]{roleID, userID};
 		row = jdbcTemplate.update(sql, ob);
 		return row;
@@ -65,8 +65,8 @@ public class AuthorityDaoImpl implements AuthorityDao {
 		String sql = "insert into Authority(userID_FK, roleID_FK) values (?,?,?)";
 		for(Authority a : authorities){
 			row++;
-			int roleID = a.getRole().getRoleID();
-			int userID = a.getUser().getUserID();
+			int roleID = a.getRoleID();
+			int userID = a.getUserID();
 			Object[] ob = new Object[]{userID, roleID };
 			jdbcTemplate.update(sql, ob);
 		}

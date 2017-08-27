@@ -24,7 +24,7 @@ public class adminController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String showAdmin() {
-		return "main";
+		return "controlpage";
 	}
 	
 	@RequestMapping(value="/authorities.json")

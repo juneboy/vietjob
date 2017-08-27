@@ -67,7 +67,7 @@ public class loginController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logOut(Model model) {
 		model.addAttribute("logout", "true");
-		return "login";
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
@@ -98,17 +98,17 @@ public class loginController {
 		String industry = CapitalFirstLetter.getCapitalize(request.getParameter("industry"));
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
-		in = industrydao.findIndustry(industry);
+	    int industryID = industrydao.findIndustry(industry).getIndustryID();
 		if(in.equals(null)){
 			in.setIndustry(industry);
 			industrydao.insertIndustry(in);
-			employer = new EmployerImpl(name, null, null, null, null, null, in);
+			employer = new EmployerImpl(0, null, null, null, null, null,0,0);
 			user = new UserImpl(ENABLED, email, pass, null, null);
 			userdao.insertUser(user, encoder);
 	        employerdao.insertEmployer(employer);
 		} else {
 			Zipcode zipcode = new ZipcodeImpl("01280",null, null);
-			employer = new EmployerImpl(name, null, null, null, null,zipcode, in);
+			employer = new EmployerImpl(0, null, null, null, null, null,0,0);
 			user = new UserImpl(ENABLED, email, pass, null, null);
 			userdao.insertUser(user, encoder);
 	        employerdao.insertEmployer(employer);
@@ -118,7 +118,7 @@ public class loginController {
 
 	private void signupEmployee(HttpServletRequest request,
 			HttpServletResponse response) {
-		employee = new EmployeeImpl(null, null, null, null, null, null, null, null, null, 0, null, null, null, null);
+		employee = new EmployeeImpl(0, null, null, null, null, null, 0, 0, null, null,0, null,0, null);
 		String name = request.getParameter("nameEmployee");
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");

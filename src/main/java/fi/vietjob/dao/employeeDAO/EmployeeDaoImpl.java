@@ -1,6 +1,7 @@
 package fi.vietjob.dao.employeeDAO;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -46,12 +47,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		int row =0;
 		String sql = "update Employee set employeeName=?, employeeBOD=?, employeeAddress=?, zipcode_FK=?, employeePhone=?, nationalityID_FK=?,industryID_FK=?,languages=?,certificate=?,expericence=?,employeeSSN=?,moredetails=?";
 		String name= employee.getEmployeeName();
-		String BOD = employee.getEmployeeBOD();
+		Date BOD = employee.getEmployeeBOD();
 		String address = employee.getEmployeeAddress();
-		String zipcode = employee.getZipcode().getZipcode();
+		String zipcode = employee.getZipcode();
 		String phone = employee.getEmployeePhone();
-		int nationality = employee.getNationality().getNationalityID();
-		int industry = employee.getIndustry().getIndustryID();
+		int nationality = employee.getNationalityID();
+		int industry = employee.getIndustryID();
 		String languages = employee.getLanguages();
 		String certificate = employee.getCertificate();
 		int experience = employee.getExperience();
@@ -67,12 +68,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		int row =0;
 		String sql = "insert into Employee(employeeName,employeeBOD, employeeAddress, zipcode_FK,employeePhone,nationalityID_FK,industryID_FK,languages,certificate,experience,employeeSSN,moredetails) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		String name= employee.getEmployeeName();
-		String BOD = employee.getEmployeeBOD();
+		Date BOD = employee.getEmployeeBOD();
 		String address = employee.getEmployeeAddress();
-		String zipcode = employee.getZipcode().getZipcode();
+		String zipcode = employee.getZipcode();
 		String phone = employee.getEmployeePhone();
-		int nationality = employee.getNationality().getNationalityID();
-		int industry = employee.getIndustry().getIndustryID();
+		int nationality = employee.getNationalityID();
+		int industry = employee.getIndustryID();
 		String languages = employee.getLanguages();
 		String certificate = employee.getCertificate();
 		int experience = employee.getExperience();
@@ -98,12 +99,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		for (Employee e : employees) {
 			row++;
 			String name = e.getEmployeeName();
-			String BOD = e.getEmployeeBOD();
+			Date BOD = e.getEmployeeBOD();
 			String address = e.getEmployeeAddress();
-			String zipcode = e.getZipcode().getZipcode();
+			String zipcode = e.getZipcode();
 			String phone = e.getEmployeePhone();
-			int nationality = e.getNationality().getNationalityID();
-			int industry = e.getIndustry().getIndustryID();
+			int nationality = e.getNationalityID();
+			int industry = e.getIndustryID();
 			String languages = e.getLanguages();
 			String certificate = e.getCertificate();
 			int experience = e.getExperience();

@@ -36,7 +36,7 @@ public class JobDaoImpl implements JobDao {
 	
 	public List<Job> getAllJob() {
 		List<Job> list = new ArrayList<Job>();
-		String sql = "select * from Job";
+		String sql = "select * from Job as j, Employer as e where j.employerID_FK = e.employerID";
 		RowMapper<Job> jobRM = new JobRowMapper();
 		list = jdbcTemplate.query(sql, jobRM);
 		return list;
@@ -59,9 +59,9 @@ public class JobDaoImpl implements JobDao {
 		String name = job.getJobName();
 		String details = job.getJobDetails();
 		String require = job.getJobRequire();
-		int employerID = job.getEmployer().getEmployerID();
-		String zipcode = job.getZipcode().getZipcode();
-		String exp = job.getExpDate();
+		int employerID = job.getEmployerID();
+		String zipcode = job.getZipcode();
+		Date exp = job.getExpDate();
 		String post = getCurrentDate();
 		Object[] ob = new Object[]{id, name, details, require, employerID, zipcode, post, exp};
 		row = jdbcTemplate.update(sql, ob);
@@ -75,10 +75,10 @@ public class JobDaoImpl implements JobDao {
 		String name = job.getJobName();
 		String details = job.getJobDetails();
 		String require = job.getJobRequire();
-		int employerID = job.getEmployer().getEmployerID();
-		String zipcode = job.getZipcode().getZipcode();
+		int employerID = job.getEmployerID();
+		String zipcode = job.getZipcode();
 		String post = getCurrentDate();
-		String exp = job.getExpDate();
+		Date exp = job.getExpDate();
 		Object[] ob = new Object[]{name, details, require, employerID, zipcode,post, exp, jobID};
 		row = jdbcTemplate.update(sql, ob);
 		return row;
@@ -93,9 +93,9 @@ public class JobDaoImpl implements JobDao {
 			String name = job.getJobName();
 			String details = job.getJobDetails();
 			String require = job.getJobRequire();
-			int employerID = job.getEmployer().getEmployerID();
-			String zipcode = job.getZipcode().getZipcode();
-			String exp = job.getExpDate();
+			int employerID = job.getEmployerID();
+			String zipcode = job.getZipcode();
+			Date exp = job.getExpDate();
 			String post = getCurrentDate();
 			Object[] ob = new Object[]{id, name, details, require, employerID, zipcode, post, exp};
 			jdbcTemplate.update(sql, ob);

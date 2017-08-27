@@ -1,35 +1,28 @@
 package fi.vietjob.bean.job;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import fi.vietjob.bean.employer.Employer;
-import fi.vietjob.bean.zipcode.Zipcode;
 
 public class JobImpl implements Job{
     private int jobID;
     private String jobName;
-    private Zipcode zipcode;
+    private String zipcode;
     private String jobDetails;
     private String jobRequire;
-    private Employer employer;
+    private int employerID;
     private Date postDate;
     private Date expDate;
-    
-    
-    /**
+	/**
 	 * @param jobID
 	 * @param jobName
 	 * @param zipcode
 	 * @param jobDetails
 	 * @param jobRequire
-	 * @param employer
+	 * @param employerID
 	 * @param postDate
 	 * @param expDate
-	 * @param fm
 	 */
-	public JobImpl(int jobID, String jobName, Zipcode zipcode,
-			String jobDetails, String jobRequire, Employer employer,
+	public JobImpl(int jobID, String jobName, String zipcode,
+			String jobDetails, String jobRequire, int employerID,
 			Date postDate, Date expDate) {
 		super();
 		this.jobID = jobID;
@@ -37,28 +30,9 @@ public class JobImpl implements Job{
 		this.zipcode = zipcode;
 		this.jobDetails = jobDetails;
 		this.jobRequire = jobRequire;
-		this.employer = employer;
+		this.employerID = employerID;
 		this.postDate = postDate;
 		this.expDate = expDate;
-	}
-	SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
-	public String getPostDate() {
-		return fm.format(postDate);
-	}
-	public void setPostDate(Date postDate) {
-		this.postDate = postDate;
-	}
-	public String getExpDate() {
-		return fm.format(expDate);
-	}
-	public void setExpDate(Date expDate) {
-		this.expDate = expDate;
-	}
-	public Employer getEmployer() {
-		return employer;
-	}
-	public void setEmployer(Employer employer) {
-		this.employer = employer;
 	}
 	public int getJobID() {
 		return jobID;
@@ -72,10 +46,10 @@ public class JobImpl implements Job{
 	public void setJobName(String jobName) {
 		this.jobName = jobName;
 	}
-	public Zipcode getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
-	public void setZipcode(Zipcode zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 	public String getJobDetails() {
@@ -90,6 +64,24 @@ public class JobImpl implements Job{
 	public void setJobRequire(String jobRequire) {
 		this.jobRequire = jobRequire;
 	}
+	public int getEmployerID() {
+		return employerID;
+	}
+	public void setEmployerID(int employerID) {
+		this.employerID = employerID;
+	}
+	public Date getPostDate() {
+		return postDate;
+	}
+	public void setPostDate(Date postDate) {
+		this.postDate = postDate;
+	}
+	public Date getExpDate() {
+		return expDate;
+	}
+	public void setExpDate(Date expDate) {
+		this.expDate = expDate;
+	}
     
-    
+            
 }

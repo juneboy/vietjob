@@ -1,21 +1,15 @@
 package fi.vietjob.bean.employer;
 
-import fi.vietjob.bean.industry.Industry;
-import fi.vietjob.bean.user.User;
-import fi.vietjob.bean.zipcode.Zipcode;
 
 public class EmployerImpl implements Employer{
     private int employerID;
     private String employerName;
     private String employerPresent;
     private String employerAddress;
-    private Zipcode zipcode;
+    private String zipcode;
     private String employerPhone;
-    private User user;
-    private Industry industry;
-    
-    
-    
+    private int userID;
+    private int industryID;
 	/**
 	 * @param employerID
 	 * @param employerName
@@ -23,26 +17,21 @@ public class EmployerImpl implements Employer{
 	 * @param employerAddress
 	 * @param zipcode
 	 * @param employerPhone
-	 * @param user
+	 * @param userID
 	 * @param industry
 	 */
-	public EmployerImpl(String employerName,
-			String employerPresent, String employerAddress,
-			String employerPhone, User user,Zipcode zipcode, Industry industry) {
+	public EmployerImpl(int employerID, String employerName,
+			String employerPresent, String employerAddress, String zipcode,
+			String employerPhone, int userID, int industry) {
 		super();
+		this.employerID = employerID;
 		this.employerName = employerName;
 		this.employerPresent = employerPresent;
 		this.employerAddress = employerAddress;
 		this.zipcode = zipcode;
 		this.employerPhone = employerPhone;
-		this.user = user;
-		this.industry = industry;
-	}
-	public Industry getIndustry() {
-		return industry;
-	}
-	public void setIndustry(Industry industry) {
-		this.industry = industry;
+		this.userID = userID;
+		this.industryID = industry;
 	}
 	public int getEmployerID() {
 		return employerID;
@@ -68,10 +57,10 @@ public class EmployerImpl implements Employer{
 	public void setEmployerAddress(String employerAddress) {
 		this.employerAddress = employerAddress;
 	}
-	public Zipcode getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
-	public void setZipcode(Zipcode zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 	public String getEmployerPhone() {
@@ -80,12 +69,19 @@ public class EmployerImpl implements Employer{
 	public void setEmployerPhone(String employerPhone) {
 		this.employerPhone = employerPhone;
 	}
-	public User getUser() {
-		return user;
+	public int getUserID() {
+		return userID;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
-    
-    
+	public int getIndustryID() {
+		return industryID;
+	}
+	public void setIndustryID(int industryID) {
+		this.industryID = industryID;
+	}
+
+
+	    
 }

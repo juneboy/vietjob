@@ -1,23 +1,20 @@
 package fi.vietjob.bean.authority;
 
-import fi.vietjob.bean.role.Role;
-import fi.vietjob.bean.user.User;
 
 public class AuthorityImpl implements Authority {
     private int authorityID;
-    private Role role;
-    private User user;
-    
-    
+    private int roleID;
+    private int userID;
 	/**
 	 * @param authorityID
-	 * @param role
-	 * @param user
+	 * @param roleID
+	 * @param userID
 	 */
-	public AuthorityImpl(Role role, User user) {
+	public AuthorityImpl(int authorityID, int roleID, int userID) {
 		super();
-		this.role = role;
-		this.user = user;
+		this.authorityID = authorityID;
+		this.roleID = roleID;
+		this.userID = userID;
 	}
 	public int getAuthorityID() {
 		return authorityID;
@@ -25,18 +22,19 @@ public class AuthorityImpl implements Authority {
 	public void setAuthorityID(int authorityID) {
 		this.authorityID = authorityID;
 	}
-	public Role getRole() {
-		return role;
+	public int getRoleID() {
+		return roleID;
 	}
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRoleID(int roleID) {
+		this.roleID = roleID;
 	}
-	public User getUser() {
-		return user;
+	public int getUserID() {
+		return userID;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
     
+
     
 }
